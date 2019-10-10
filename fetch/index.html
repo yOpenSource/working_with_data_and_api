@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1 align="center">Fetch API Demo</h1>
+  <img src="" alt="" id="wooden_table">
+  <script type="text/javascript">
+
+   console.log(" going to fetch a image from server");
+  fetch('wooden_table.jpg').then(
+    response => {
+      return response.blob();
+    }
+  ).then(
+    response => {
+      document.getElementById('wooden_table').src=URL.createObjectURL(response);
+    }
+  ).catch(
+    error => {
+      console.log('error occured  as follows :');
+      console.log(error);
+    }
+  );
+  </script>
+</body>
+</html>
